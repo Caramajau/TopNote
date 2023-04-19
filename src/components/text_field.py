@@ -1,4 +1,5 @@
 import tkinter as tk
+import os
 
 class TextField(tk.Text):
     def __init__(self, height: int = 700, width: int = 350) -> None:
@@ -11,6 +12,9 @@ class TextField(tk.Text):
     def save_input(self) -> None:
         text_input = self.get("1.0", "end-1c")
 
+        if (os.path.exists(self.path) == False):
+            os.makedirs(self.path)
+
         with open(self.path, "w+") as file:
             file.write(text_input)
 
@@ -18,6 +22,9 @@ class TextField(tk.Text):
     Function for loading the input
     """
     def load_saved_input(self) -> None:
+        if (os.path.exists(self.path) == False):
+            os.makedirs(self.path)
+
         with open(self.path, "r+") as file:
             text = file.read()
 
