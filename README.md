@@ -10,5 +10,5 @@ I wanted to make something simple.
 ### How to use:
 Run from app.py
 
-![Github version](https://img.shields.io/badge/version-1.0.1-darkblue?style=flat-square)
+![Github version](https://img.shields.io/badge/version-1.0.2-darkblue?style=flat-square)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Caramajau/TopNote?color=blue&style=flat-square)
