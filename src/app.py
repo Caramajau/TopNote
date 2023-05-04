@@ -7,8 +7,8 @@ if __name__ == "__main__":
         os.makedirs("save")
 
     # this changes so that the taskbar matches the window icon.
-    myappid = "mycompany.myproduct.subproduct.version" # arbitrary string
-    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+    my_app_id = "mycompany.myproduct.subproduct.version" # arbitrary string
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(my_app_id)
 
     the_window = Window()
     the_window.mainloop()
