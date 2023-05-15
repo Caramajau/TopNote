@@ -8,7 +8,7 @@ if __name__ == "__main__":
         os.makedirs("save")
 
     # From what I understand this is only necessary on Windows.
-    if (platform.system()) == "Windows":
+    if (platform.system() == "Windows"):
         # this changes so that the taskbar matches the window icon.
         my_app_id = "TopNote"
         ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(my_app_id)
