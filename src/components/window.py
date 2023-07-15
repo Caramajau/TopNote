@@ -1,5 +1,7 @@
 import tkinter as tk
 from tktooltip import ToolTip
+import sys
+import os
 
 from components.text_field import TextField
 
@@ -11,7 +13,7 @@ class Window(tk.Tk):
         self.geometry("700x350")
         self.attributes("-topmost", True)
 
-        icon_photo = tk.PhotoImage(file="src\\resources\\t_icon.png")
+        icon_photo = tk.PhotoImage(file=resource_path("src\\resources\\t_icon.png"))
         self.iconphoto(False, icon_photo)
 
         self.text_field = TextField()
@@ -54,3 +56,12 @@ class Window(tk.Tk):
         self.tooltip_for_save_button.wm_attributes("-topmost", 1)
         self.tooltip_for_load_button.wm_attributes("-topmost", 1)
         self.tooltip_for_clear_button.wm_attributes("-topmost", 1)
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
