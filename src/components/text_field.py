@@ -3,13 +3,13 @@ import tkinter as tk
 class TextField(tk.Text):
     def __init__(self, height: int = 700, width: int = 350) -> None:
         super().__init__(height = height, width = width)
-        self.path = "save\\saved_text.txt"
+        self.path:str = "save\\saved_text.txt"
     
     """
     Function for saving input from the text field. 
     """
     def save_input(self) -> None:
-        text_input = self.get("1.0", "end-1c")
+        text_input:str = self.get("1.0", "end-1c")
 
         with open(self.path, "w+") as file:
             file.write(text_input)
