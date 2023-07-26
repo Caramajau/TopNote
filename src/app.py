@@ -3,7 +3,7 @@ import os
 import ctypes
 import platform
 
-if __name__ == "__main__":
+if (__name__ == "__main__"):
     if (os.path.exists("save") == False):
         os.makedirs("save")
 
