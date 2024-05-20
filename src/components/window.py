@@ -1,7 +1,8 @@
+import os
+import sys
+
 import tkinter as tk
 from tktooltip import ToolTip
-import sys
-import os
 
 from components.text_field import TextField
 

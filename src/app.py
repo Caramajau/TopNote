@@ -1,7 +1,8 @@
-from components.window import Window
 import ctypes
 import platform
 import tkinter as tk
+
+from components.window import Window
 
 def main():
     __configure_task_bar_icon()
