@@ -8,7 +8,8 @@ If you want to have notes that are always on top of the other windows.
 I wanted to make something simple.
 
 ### How to use:
-Run from app.py
+Either run from app.py from project or download TopNote.exe and run like any other .exe file.
 
-![Github version](https://img.shields.io/badge/version-1.0.2-darkblue?style=flat-square)
+
+![Github version](https://img.shields.io/badge/version-1.0.0-darkblue?style=flat-square)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Caramajau/TopNote?color=blue&style=flat-square)
