@@ -1,4 +1,5 @@
 import os
+import sys
 
 class FileHandler:
     def __init__(self, file_path: str) -> None:
@@ -19,3 +20,13 @@ class FileHandler:
             text_content: str = file.read()
 
         return text_content
+
+def resource_path(relative_path: str) -> str:
+    # Source: https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/13790741#13790741
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path: str = sys._MEIPASS
+    except Exception:
+        base_path: str = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)

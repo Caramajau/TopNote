@@ -1,10 +1,10 @@
 import os
-import sys
 
 import tkinter as tk
 from tktooltip import ToolTip
 
 from components.text_field import TextField
+from file_handling.file_handler import resource_path
 
 class Window(tk.Tk):
     def __init__(self) -> None:
@@ -61,13 +61,3 @@ class Window(tk.Tk):
         self.tooltip_for_save_button.wm_attributes("-topmost", 1)
         self.tooltip_for_load_button.wm_attributes("-topmost", 1)
         self.tooltip_for_clear_button.wm_attributes("-topmost", 1)
-
-def resource_path(relative_path: str) -> str:
-    # Source: https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/13790741#13790741
-    """ Get absolute path to resource, works for dev and for PyInstaller """
-    try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
-        base_path: str = sys._MEIPASS
-    except Exception:
-        base_path: str = os.path.abspath(".")
-    return os.path.join(base_path, relative_path)
