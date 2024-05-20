@@ -10,22 +10,21 @@ class TextField(tk.Text):
         self.file_handler: FileHandler = FileHandler(file_path)
     
     """
-    Function for saving input from the text field. 
+    Saves input from the text field. 
     """
     def save_input(self) -> None:
         text_input: str = self.get("1.0", "end-1c")
-
         self.file_handler.write(text_input)
 
     """
-    Function for loading the input
+    Loads saved text and inserts it to the text field.
     """
     def load_saved_input(self) -> None:
         text: str = self.file_handler.read()
         self.insert("1.0", text)
 
     """
-    Function for clearing the text field.
+    Clears the text field.
     """
     def clear_text(self) -> None:
         self.delete("1.0","end")
