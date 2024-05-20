@@ -1,28 +1,27 @@
 import tkinter as tk
 
+from file_handling.file_handler import FileHandler
+
 class TextField(tk.Text):
     def __init__(self, height: int = 700, width: int = 350) -> None:
         super().__init__(height = height, width = width)
-        self.path:str = "save\\saved_text.txt"
+        file_path: str = "save\\saved_text.txt"
+        self.file_handler: FileHandler = FileHandler(file_path)
     
     """
     Function for saving input from the text field. 
     """
     def save_input(self) -> None:
-        text_input:str = self.get("1.0", "end-1c")
+        text_input: str = self.get("1.0", "end-1c")
 
-        with open(self.path, "w+") as file:
-            file.write(text_input)
+        self.file_handler.write(text_input)
 
     """
     Function for loading the input
     """
     def load_saved_input(self) -> None:
-
-        with open(self.path, "r+") as file:
-            text = file.read()
-
-            self.insert("1.0", text)
+        text: str = self.file_handler.read()
+        self.insert("1.0", text)
 
     """
     Function for clearing the text field.
