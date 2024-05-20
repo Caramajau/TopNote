@@ -5,12 +5,12 @@ import tkinter as tk
 from components.window import Window
 
 def main():
-    __configure_task_bar_icon()
+    __configure_taskbar_icon()
 
     the_window: tk.Tk = Window()
     the_window.mainloop()
 
-def __configure_task_bar_icon() -> None:
+def __configure_taskbar_icon() -> None:
     # From what I understand this is only necessary on Windows.
     if platform.system() == "Windows":
         # this changes so that the taskbar matches the window icon.
