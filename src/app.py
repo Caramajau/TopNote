@@ -5,9 +5,6 @@ import platform
 import tkinter as tk
 
 def main():
-    if not os.path.exists("save"):
-        os.makedirs("save")
-
     # From what I understand this is only necessary on Windows.
     if platform.system() == "Windows":
         # this changes so that the taskbar matches the window icon.
