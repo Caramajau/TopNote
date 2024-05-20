@@ -61,7 +61,8 @@ class Window(tk.Tk):
         self.tooltip_for_load_button.wm_attributes("-topmost", 1)
         self.tooltip_for_clear_button.wm_attributes("-topmost", 1)
 
-def resource_path(relative_path:str) -> str:
+def resource_path(relative_path: str) -> str:
+    # Source: https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/13790741#13790741
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
         # PyInstaller creates a temp folder and stores path in _MEIPASS
