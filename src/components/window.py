@@ -13,7 +13,7 @@ class Window(tk.Tk):
         self.geometry("700x350")
         self.attributes("-topmost", True)
 
-        relative_icon_path: str = os.path.join("src", "resources", "t_icon.png")
+        relative_icon_path: str = os.path.join("resources", "t_icon.png")
         icon_photo: tk.PhotoImage = tk.PhotoImage(file=resource_path(relative_icon_path))
         self.iconphoto(False, icon_photo)
 
