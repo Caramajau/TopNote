@@ -1,11 +1,12 @@
 import tkinter as tk
 
 from file_handling.file_handler import FileHandler
+from file_handling.file_paths import FilePaths
 
 class TextField(tk.Text):
     def __init__(self, height: int = 700, width: int = 350) -> None:
         super().__init__(height = height, width = width)
-        file_path: str = "save\\saved_text.txt"
+        file_path: str = FilePaths.SAVE_PATH.value
         self.file_handler: FileHandler = FileHandler(file_path)
     
     """
