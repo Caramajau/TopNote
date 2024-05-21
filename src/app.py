@@ -4,7 +4,7 @@ import tkinter as tk
 
 from components.window import Window
 
-def main():
+def main() -> None:
     __configure_taskbar_icon()
 
     the_window: tk.Tk = Window()
