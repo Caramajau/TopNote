@@ -16,9 +16,16 @@ class FileHandler:
             os.makedirs(dir_name)
     
     def read(self) -> str:
-        with open(self.FILE_PATH, "r+") as file:
-            text_content: str = file.read()
+        try:
+            return self.__read_file(self.FILE_PATH)
+        
+        except FileNotFoundError as e:
+            print(f"Exception occurred: {e} \nFile at {self.FILE_PATH} has to be saved before loading")
+            return ""
 
+    def __read_file(self, file_path: str) -> str:
+        with open(file_path, "r+") as file:
+            text_content: str = file.read()
         return text_content
 
 def resource_path(relative_path: str) -> str:
