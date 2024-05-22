@@ -2,8 +2,8 @@ import tkinter as tk
 from tktooltip import ToolTip
 
 from view.text_field import TextField
-from file_handling.file_paths import FilePaths
-from file_handling.file_handler import resource_path
+from model.file_handling.file_paths import FilePaths
+from model.file_handling.file_handler import resource_path
 
 class Window(tk.Tk):
     def __init__(self) -> None:
