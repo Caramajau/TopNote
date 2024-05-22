@@ -1,7 +1,7 @@
 import tkinter as tk
 from tktooltip import ToolTip
 
-from components.text_field import TextField
+from view.text_field import TextField
 from file_handling.file_paths import FilePaths
 from file_handling.file_handler import resource_path
 
