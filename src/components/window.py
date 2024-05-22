@@ -1,9 +1,8 @@
-import os
-
 import tkinter as tk
 from tktooltip import ToolTip
 
 from components.text_field import TextField
+from file_handling.file_paths import FilePaths
 from file_handling.file_handler import resource_path
 
 class Window(tk.Tk):
@@ -14,7 +13,7 @@ class Window(tk.Tk):
         self.geometry("700x350")
         self.attributes("-topmost", True)
 
-        relative_icon_path: str = os.path.join("resources", "t_icon.png")
+        relative_icon_path: str = FilePaths.ICON_PATH.value
         icon_photo: tk.PhotoImage = tk.PhotoImage(file=resource_path(relative_icon_path))
         self.iconphoto(False, icon_photo)
 
