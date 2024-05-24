@@ -1,7 +1,7 @@
 import tkinter as tk
 
-from file_handling.file_handler import FileHandler
-from file_handling.file_paths import FilePaths
+from model.file_handling.file_handler import FileHandler
+from model.file_handling.file_paths import FilePaths
 
 class TextField(tk.Text):
     def __init__(self, height: int = 700, width: int = 350) -> None:
@@ -13,6 +13,7 @@ class TextField(tk.Text):
         """
         Saves input from the text field. 
         """
+
         text_input: str = self.get("1.0", "end-1c")
         self.file_handler.write(text_input)
 
@@ -20,14 +21,14 @@ class TextField(tk.Text):
         """
         Loads saved text and inserts it to the text field.
         """
-        try:
-            text: str = self.file_handler.read()
-            self.insert("1.0", text)
-        except FileNotFoundError as e:
-            print(f"Exception occurred: {e} \nFile at {self.FILE_PATH} has to be saved before loading")
+
+        text: str = self.file_handler.read()
+        self.insert("1.0", text)
+
 
     def clear_text(self) -> None:
         """
         Clears the text field.
         """
+        
         self.delete("1.0","end")

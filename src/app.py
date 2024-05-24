@@ -2,7 +2,7 @@ import ctypes
 import platform
 import tkinter as tk
 
-from components.window import Window
+from view.window import Window
 
 def main() -> None:
     __configure_taskbar_icon()

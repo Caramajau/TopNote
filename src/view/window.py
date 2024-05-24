@@ -1,10 +1,9 @@
-import os
-
 import tkinter as tk
 from tktooltip import ToolTip
 
-from components.text_field import TextField
-from file_handling.file_handler import resource_path
+from view.text_field import TextField
+from model.file_handling.file_paths import FilePaths
+from model.file_handling.file_handler import resource_path
 
 class Window(tk.Tk):
     def __init__(self) -> None:
@@ -14,11 +13,11 @@ class Window(tk.Tk):
         self.geometry("700x350")
         self.attributes("-topmost", True)
 
-        relative_icon_path: str = os.path.join("resources", "t_icon.png")
+        relative_icon_path: str = FilePaths.ICON_PATH.value
         icon_photo: tk.PhotoImage = tk.PhotoImage(file=resource_path(relative_icon_path))
         self.iconphoto(False, icon_photo)
 
-        self.text_field = TextField()
+        self.text_field: TextField = TextField()
 
         self.button_frame: tk.Frame = tk.Frame(self)
         self.save_button: tk.Button = tk.Button(self.button_frame, text="Save", 
