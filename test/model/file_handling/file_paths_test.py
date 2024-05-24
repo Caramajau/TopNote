@@ -1,3 +1,5 @@
+import os
+
 from parameterized import parameterized
 import unittest as ut
 
@@ -21,6 +23,10 @@ class FilePathsTest(ut.TestCase):
     @parameterized.expand(file_path_test_cases)
     def test_path_contains_at_least_one_letter(self, _, path) -> None:
         self.assertRegex(path, r"[a-zA-Z]")
+    
+    @parameterized.expand(file_path_test_cases)
+    def test_path_uses_correct_separator(self, _, path) -> None:
+        self.assertIn(os.path.sep, path)
 
     def test_save_path_ends_with_saved_text_txt(self) -> None:
         save_path: str = FilePaths.SAVE_PATH.value
