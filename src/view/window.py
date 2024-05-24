@@ -17,7 +17,7 @@ class Window(tk.Tk):
         icon_photo: tk.PhotoImage = tk.PhotoImage(file=resource_path(relative_icon_path))
         self.iconphoto(False, icon_photo)
 
-        self.text_field = TextField()
+        self.text_field: TextField = TextField()
 
         self.button_frame: tk.Frame = tk.Frame(self)
         self.save_button: tk.Button = tk.Button(self.button_frame, text="Save", 
