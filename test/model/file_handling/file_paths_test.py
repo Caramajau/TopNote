@@ -7,6 +7,7 @@ from src.model.file_handling.file_paths import FilePaths
 
 class FilePathsTest(ut.TestCase):
     file_path_test_cases = [(name, e.value) for name, e in FilePaths.__members__.items()]
+    invalid_chars: list[str] = [":", "*", "?", "\"", "<", ">", "|"]
 
     @parameterized.expand(file_path_test_cases)
     def test_path_is_not_none(self, _, path) -> None:
@@ -27,6 +28,10 @@ class FilePathsTest(ut.TestCase):
     @parameterized.expand(file_path_test_cases)
     def test_path_uses_correct_separator(self, _, path) -> None:
         self.assertIn(os.path.sep, path)
+
+    @parameterized.expand(file_path_test_cases)
+    def test_path_does_not_contain_invalid_characters(self, _, path) -> None:
+        self.assertFalse(any(char in path for char in self.invalid_chars))
 
     def test_save_path_ends_with_saved_text_txt(self) -> None:
         save_path: str = FilePaths.SAVE_PATH.value
