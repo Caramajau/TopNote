@@ -11,16 +11,16 @@ class TextField(tk.Text):
         """Initialize the TextField object with the height and width."""
         super().__init__(height=height, width=width)
         self.FILE_PATH: str = FilePaths.SAVE_PATH.value
-        self.file_handler: FileHandler = FileHandler(self.FILE_PATH)
+        self.__file_handler: FileHandler = FileHandler(self.FILE_PATH)
     
     def save_input(self) -> None:
         """Save input from the text field."""
         text_input: str = self.get("1.0", "end-1c")
-        self.file_handler.write(text_input)
+        self.__file_handler.write(text_input)
 
     def load_saved_input(self) -> None:
         """Load saved text and inserts it to the text field."""
-        text: str = self.file_handler.read()
+        text: str = self.__file_handler.read()
         self.insert("1.0", text)
 
     def clear_text(self) -> None:
