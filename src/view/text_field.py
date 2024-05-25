@@ -7,6 +7,7 @@ class TextField(tk.Text):
     """Class to handle the text field operations like saving and loading text.
     Inherits from the tkinter Text class.
     """
+    
     def __init__(self, height: int = 700, width: int = 350) -> None:
         """Initialize the TextField object with the height and width."""
         super().__init__(height=height, width=width)

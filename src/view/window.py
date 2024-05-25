@@ -9,6 +9,7 @@ class Window(tk.Tk):
     """Class to handle the main window of the application.
     Inherits from the tkinter Tk class.
     """
+    
     def __init__(self) -> None:
         """Initialize the Window object."""
         super().__init__()

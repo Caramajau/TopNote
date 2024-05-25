@@ -3,6 +3,7 @@ import sys
 
 class FileHandler:
     """Class to handle file operations like reading and writing to a file."""
+    
     def __init__(self, file_path: str) -> None:
         """Initialize the FileHandler object with the file path."""
         self.FILE_PATH: str = file_path
@@ -38,7 +39,7 @@ class FileHandler:
 
 def resource_path(relative_path: str) -> str:
     # Source: https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/13790741#13790741
-    """Get absolute path to resource, works for dev and for PyInstaller"""
+    """Get absolute path to resource, works for dev and for PyInstaller."""
     try:
         # PyInstaller creates a temp folder and stores path in _MEIPASS
         base_path: str = sys._MEIPASS
