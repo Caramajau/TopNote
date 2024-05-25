@@ -4,19 +4,16 @@ import sys
 class FileHandler:
     def __init__(self, file_path: str) -> None:
         """Initialize the FileHandler object with the file path."""
-
         self.FILE_PATH: str = file_path
     
     def write(self, text_to_save: str) -> None:
         """Write the text to the file at the file path specified in the constructor."""
-
         self.__create_directory_if_not_exist()
         with open(self.FILE_PATH, "w+") as file:
             file.write(text_to_save)
 
     def __create_directory_if_not_exist(self) -> None:
         """Create the directory if it does not exist for the file path specified in the constructor."""
-
         dir_name = os.path.dirname(self.FILE_PATH)
         if not os.path.exists(dir_name):
             os.makedirs(dir_name)
@@ -25,7 +22,6 @@ class FileHandler:
         """Read the text from the file at the file path specified in the constructor
         if the file exists, otherwise return an empty string.
         """
-
         try:
             return self.__read_file(self.FILE_PATH)
         
