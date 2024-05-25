@@ -6,7 +6,7 @@ import unittest as ut
 from src.model.file_handling.file_paths import FilePaths
 
 class FilePathsTest(ut.TestCase):
-    file_path_test_cases = [(name, e.value) for name, e in FilePaths.__members__.items()]
+    file_path_test_cases = [(name, enum_member.value) for name, enum_member in FilePaths.__members__.items()]
     invalid_chars: list[str] = [":", "*", "?", "\"", "<", ">", "|"]
 
     @parameterized.expand(file_path_test_cases)
@@ -32,6 +32,10 @@ class FilePathsTest(ut.TestCase):
     @parameterized.expand(file_path_test_cases)
     def test_path_does_not_contain_invalid_characters(self, _, path) -> None:
         self.assertFalse(any(char in path for char in self.invalid_chars))
+
+    def test_path_all_paths_are_unique(self) -> None:
+        paths: list[str] = [enum_member.value for enum_member in FilePaths]
+        self.assertEqual(len(paths), len(set(paths)))
 
     def test_save_path_ends_with_saved_text_txt(self) -> None:
         save_path: str = FilePaths.SAVE_PATH.value
