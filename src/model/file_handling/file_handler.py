@@ -2,6 +2,7 @@ import os
 import sys
 
 class FileHandler:
+    """Class to handle file operations like reading and writing to a file."""
     def __init__(self, file_path: str) -> None:
         """Initialize the FileHandler object with the file path."""
         self.FILE_PATH: str = file_path
@@ -30,6 +31,7 @@ class FileHandler:
             return ""
 
     def __read_file(self, file_path: str) -> str:
+        """Helper method to read the file at the specified file path."""
         with open(file_path, "r+") as file:
             text_content: str = file.read()
         return text_content
