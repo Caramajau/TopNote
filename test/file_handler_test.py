@@ -2,9 +2,9 @@ import os
 
 import unittest as ut
 
-from src.model.file_handling.file_handler import FileHandler
-from src.model.file_handling.file_handler import resource_path
-from src.model.file_handling.file_paths import FilePaths
+from model.file_handling.file_handler import FileHandler
+from model.file_handling.file_handler import resource_path
+from model.file_handling.file_paths import FilePaths
 
 class FileHandlerTest(ut.TestCase):
     FILE_PATH: str = os.path.join("data", "test_file.txt")

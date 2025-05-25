@@ -2,3 +2,6 @@ __pycache__/
 data/
 .vscode/
 .pytest_cache/
+dist/
+build/
+.venv/
