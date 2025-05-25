@@ -12,9 +12,8 @@ You can run it as a project from app.py.
 
 **or**
 
-You can run it either as a standalone exe file (TopNote.exe) or from an exe file in a directory after unzipping it (TopNote.zip). Note that antiviruses will probably act against the standalone version so the directory version is recommended. 
+You can run it as a standalone exe file (TopNote.exe). Either you can look for the file under release or you can create the executable yourself by using ```pyinstaller TopNote.spec```.
 
-Also note that there is no directory version for previous verions of Top Note.
+NOTE: antiviruses will probably act against the standalone version. 
 
-![Github version](https://img.shields.io/badge/version-1.1.1-darkblue?style=flat-square)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Caramajau/TopNote?color=blue&style=flat-square)

@@ -3,4 +3,5 @@ data/
 .vscode/
 .pytest_cache/
 dist/
+build/
 .venv/
