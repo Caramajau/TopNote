@@ -12,7 +12,7 @@ You can run it as a project from app.py.
 
 **or**
 
-You can run it as a standalone exe file (TopNote.exe). Either you can look for the file under release or you can create the executable yourself by using ```pyinstaller TopNote.spec```.
+You can run it as a standalone exe file (TopNote.exe). Either you can look for the file under releases or you can create the executable yourself by using ```pyinstaller TopNote.spec```.
 
 NOTE: antiviruses will probably act against the standalone version. 
 

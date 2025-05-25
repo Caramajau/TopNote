@@ -3,11 +3,14 @@ import os
 from parameterized import parameterized
 import unittest as ut
 
-from src.model.file_handling.file_paths import FilePaths
+from model.file_handling.file_paths import FilePaths
+
 
 class FilePathsTest(ut.TestCase):
-    file_path_test_cases = [(name, enum_member.value) for name, enum_member in FilePaths.__members__.items()]
-    invalid_chars: list[str] = [":", "*", "?", "\"", "<", ">", "|"]
+    file_path_test_cases: list[tuple[str, str]] = [
+        (name, enum_member.value) for name, enum_member in FilePaths.__members__.items()
+    ]
+    invalid_chars: list[str] = [":", "*", "?", '"', "<", ">", "|"]
 
     @parameterized.expand(file_path_test_cases)
     def test_path_is_not_none(self, _, path) -> None:
@@ -16,7 +19,7 @@ class FilePathsTest(ut.TestCase):
     @parameterized.expand(file_path_test_cases)
     def test_path_is_string(self, _, path) -> None:
         self.assertIsInstance(path, str)
-    
+
     @parameterized.expand(file_path_test_cases)
     def test_path_is_not_empty(self, _, path) -> None:
         self.assertNotEqual(path, "")
@@ -24,7 +27,7 @@ class FilePathsTest(ut.TestCase):
     @parameterized.expand(file_path_test_cases)
     def test_path_contains_at_least_one_letter(self, _, path) -> None:
         self.assertRegex(path, r"[a-zA-Z]")
-    
+
     @parameterized.expand(file_path_test_cases)
     def test_path_uses_correct_separator(self, _, path) -> None:
         self.assertIn(os.path.sep, path)
