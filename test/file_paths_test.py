@@ -3,7 +3,7 @@ import os
 from parameterized import parameterized
 import unittest as ut
 
-from src.model.file_handling.file_paths import FilePaths
+from model.file_handling.file_paths import FilePaths
 
 class FilePathsTest(ut.TestCase):
     file_path_test_cases = [(name, enum_member.value) for name, enum_member in FilePaths.__members__.items()]
